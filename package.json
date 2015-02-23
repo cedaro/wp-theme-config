@@ -5,9 +5,6 @@
   "main": "index.js",
   "author": "Brady Vercher",
   "license": "MIT",
-  "dependencies": {
-    "load-cedaro-grunt-config": "git://github.com/cedaro/load-cedaro-grunt-config.git#develop"
-  },
   "peerDependencies": {
     "grunt": "~0.4",
     "grunt-autoprefixer": "~0.7",
@@ -24,7 +21,6 @@
     "grunt-text-replace": "~0.3",
     "grunt-contrib-uglify": "~0.6",
     "grunt-wp-css": "0.1",
-    "grunt-wp-i18n": "~0.5",
-    "load-cedaro-grunt-config": "git://github.com/cedaro/load-cedaro-grunt-config.git#develop"
+    "grunt-wp-i18n": "~0.5"
   }
 }
