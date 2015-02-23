@@ -4,8 +4,8 @@ module.exports = {
 			archive: '<%= paths.dist %>/<%= package.name %>-<%= package.version %>.zip'
 		},
 		expand: true,
-		cwd: '<%= paths.build %>',
+		cwd: '<%= paths.tmp %>',
 		src: [ '**/*' ],
 		dest: '<%= package.name %>/',
 	}
-}
+};

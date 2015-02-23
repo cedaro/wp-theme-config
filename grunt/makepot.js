@@ -14,4 +14,4 @@ module.exports = {
 			type: 'wp-theme'
 		}
 	}
-}
+};

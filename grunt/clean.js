@@ -1,6 +1,6 @@
 module.exports = {
-	build: {
-		src: [ '<%= paths.build %>' ]
+	package: {
+		src: [ '<%= paths.tmp %>' ]
 	},
 	wpcom: {
 		src: [
@@ -9,4 +9,4 @@ module.exports = {
 			'!<%= paths.wpcom %>/languages'
 		]
 	}
-}
+};

@@ -1,5 +1,5 @@
 module.exports = {
-	build: {
+	package: {
 		files: [
 			{
 				cwd: '<!= paths.source %>',
@@ -8,7 +8,7 @@ module.exports = {
 					'!<%= paths.js %>/source/**',
 					'!includes/wpcom.php'
 				],
-				dest: '<%= paths.build %>',
+				dest: '<%= paths.tmp %>',
 				expand: true
 			}
 		]
@@ -31,4 +31,4 @@ module.exports = {
 			}
 		]
 	}
-}
+};

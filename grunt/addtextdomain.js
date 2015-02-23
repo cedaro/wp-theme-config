@@ -2,14 +2,14 @@ module.exports = {
 	options: {
 		textdomain: '<%= package.name %>'
 	},
-	build: {
+	package: {
 		options: {
 			updateDomains: ['all']
 		},
 		expand: true,
 		src: [
-			'<%= paths.build %>/*.php',
-			'<%= paths.build %>/**/*.php'
+			'<%= paths.tmp %>/*.php',
+			'<%= paths.tmp %>/**/*.php'
 		]
 	},
 	wpcom: {
@@ -22,4 +22,4 @@ module.exports = {
 			'<%= paths.wpcom %>/**/*.php'
 		]
 	}
-}
+};
