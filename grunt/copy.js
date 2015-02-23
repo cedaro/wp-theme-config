@@ -2,7 +2,7 @@ module.exports = {
 	package: {
 		files: [
 			{
-				cwd: '<!= paths.source %>',
+				cwd: '<%= paths.source %>',
 				src: [
 					'**',
 					'!<%= paths.js %>/source/**',
