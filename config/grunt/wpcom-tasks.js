@@ -43,23 +43,23 @@ module.exports = function( grunt, options ) {
         theme.autoprefixer.src.push( '<%= paths.wpcom %>/assets/css/editor-style.css' );
 
         theme.cssjanus.files.push({
-            src: '<%= paths.wpcom/assets/css/editor-style.css',
-            dest: '<%= paths.wpcom/assets/css/editor-style-rtl.css'
+            src: '<%= paths.wpcom %>assets/css/editor-style.css',
+            dest: '<%= paths.wpcom %>assets/css/editor-style-rtl.css'
         });
 
         theme.less.files.push({
             src: '<%= paths.less %>/editor-style.less',
-            dest: '<%= paths.wpcom/assets/css/editor-style.css'
+            dest: '<%= paths.wpcom %>assets/css/editor-style.css'
         });
 
         theme.pixrem.files.push({
-            src: '<%= paths.wpcom/assets/css/editor-style.css',
-            dest: '<%= paths.wpcom/assets/css/editor-style.css'
+            src: '<%= paths.wpcom %>assets/css/editor-style.css',
+            dest: '<%= paths.wpcom %>assets/css/editor-style.css'
         });
 
         theme.wpcss.files.push({
-            src: '<%= paths.wpcom/assets/css/editor-style.css',
-            dest: '<%= paths.wpcom/assets/css/editor-style.css'
+            src: '<%= paths.wpcom %>assets/css/editor-style.css',
+            dest: '<%= paths.wpcom %>assets/css/editor-style.css'
         });
     }
 
