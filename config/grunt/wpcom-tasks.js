@@ -63,5 +63,11 @@ module.exports = function( grunt, options ) {
         });
     }
 
+    if ( grunt.file.exists( options.paths.assets + '/fonts/genericons-regular-webfont.svg' ) ) {
+        theme.lineending.files = {
+            '': '<%= paths.wpcom %>/assets/fonts/genericons-regular-webfont.svg'
+        }
+    }
+
     return theme;
 };
