@@ -6,7 +6,8 @@ module.exports = {
 				src: [
 					'**',
 					'!<%= paths.js %>/source/**',
-					'!includes/wpcom.php'
+					'!includes/wpcom.php',
+					'!templates/wpcom-*'
 				],
 				dest: '<%= paths.tmp %>',
 				expand: true
