@@ -11,6 +11,13 @@ module.exports = function( grunt, options ) {
 			'cssjanus:theme'
 		],
 		'build:css:plugins': [],
+		'build:css:wpcom': [
+			'less:wpcom',
+			'pixrem:wpcom',
+			'autoprefixer:wpcom',
+			'wpcss:wpcom',
+			'cssjanus:wpcom'
+		],
 		'package': [
 			'replace',
 			'build',
