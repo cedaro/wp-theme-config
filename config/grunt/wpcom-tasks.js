@@ -1,4 +1,4 @@
-module.exports = function( grunt ) {
+module.exports = function( grunt, options ) {
     var theme = {
         autoprefixer: {
             src: [
