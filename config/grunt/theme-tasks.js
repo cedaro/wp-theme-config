@@ -39,7 +39,7 @@ module.exports = function( grunt, options ) {
 		}
 	};
 
-	if ( ! grunt.file.exists( options.paths.less + '/editor-style.less' ) ) {
+	if ( grunt.file.exists( options.paths.less + '/editor-style.less' ) ) {
 		theme.autoprefixer.src.push( '<%= paths.css %>/editor-style.css' );
 
 		theme.cssjanus.files.push({
