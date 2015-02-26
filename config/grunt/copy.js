@@ -21,6 +21,7 @@ module.exports = {
 				src: [
 					'**',
 					'!<%= paths.js %>/source/**',
+					'!audiotheme/**',
 					'!includes/back-compat.php',
 					'!includes/plugins/**',
 					'!includes/vendor/class-audiotheme-themenotice.php',
