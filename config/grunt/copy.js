@@ -24,6 +24,7 @@ module.exports = {
 					'!audiotheme/**',
 					'!includes/back-compat.php',
 					'!includes/plugins/**',
+					'includes/plugins/jetpack.php',
 					'!includes/vendor/class-audiotheme-themenotice.php',
 					'!includes/wporg.php',
 					'!languages/**'
