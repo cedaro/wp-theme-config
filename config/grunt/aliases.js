@@ -18,7 +18,11 @@ module.exports = function( grunt, options ) {
 			'wpcss:wpcom',
 			'cssjanus:wpcom'
 		],
+		'check': [
+			'search:themeSlugs'
+		],
 		'package': [
+			'check',
 			'replace',
 			'build',
 			'clean:package',

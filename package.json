@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Brady Vercher",
   "license": "MIT",
+  "devDependencies": {
+    "lodash": "~3.3.1"
+  },
   "peerDependencies": {
     "grunt": "~0.4",
     "grunt-autoprefixer": "~0.7",
@@ -20,6 +23,7 @@
     "grunt-pixrem": "~0.1",
     "grunt-text-replace": "~0.3",
     "grunt-contrib-uglify": "~0.6",
+    "grunt-search": "~0.1",
     "grunt-wp-css": "0.1",
     "grunt-wp-i18n": "~0.5"
   }

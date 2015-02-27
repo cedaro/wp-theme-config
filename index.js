@@ -23,6 +23,20 @@ module.exports = function() {
 			makepot:       'grunt-wp-i18n',
 			replace:       'grunt-text-replace',
 			wpcss:         'grunt-wp-css'
-		}
+		},
+		themes: [
+			'americanaura',
+			'bridger',
+			'caldwell',
+			'debut',
+			'encore',
+			'huesos',
+			'hyalite',
+			'nowell',
+			'obsidian',
+			'promenade',
+			'shrake',
+			'soundcheck'
+		]
 	};
 };
