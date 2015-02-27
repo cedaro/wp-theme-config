@@ -19,7 +19,8 @@ module.exports = function( grunt, options ) {
 			'cssjanus:wpcom'
 		],
 		'check': [
-			'search:themeSlugs'
+			'search:themeSlugs',
+			'complexity:theme'
 		],
 		'package': [
 			'check',

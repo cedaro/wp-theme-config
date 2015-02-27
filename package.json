@@ -11,6 +11,7 @@
   "peerDependencies": {
     "grunt": "~0.4",
     "grunt-autoprefixer": "~0.7",
+    "grunt-complexity": "~0.3",
     "grunt-contrib-clean": "~0.5",
     "grunt-contrib-compress": "~0.7",
     "grunt-contrib-concat": "~0.4",
