@@ -17,7 +17,7 @@ module.exports = {
 	wpcom: {
 		files: [
 			{
-				cwd: 'src',
+				cwd: '<%= paths.source %>',
 				src: [
 					'**',
 					'!<%= paths.js %>/source/**',
