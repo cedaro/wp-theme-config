@@ -2,7 +2,7 @@ var moment = require( 'moment' ),
 	path = require( 'path' ),
 	scp = require( 'scp' );
 
-module.exports = function ( shipit ) {
+module.exports = function ( shipit, done ) {
 	var package = require( path.join( process.cwd(), 'package.json' ) );
 
 	shipit.archiveFile = package.name + '-' + package.version + '.zip';
@@ -71,7 +71,7 @@ module.exports = function ( shipit ) {
 		cmd += ')';
 		cmd += '|sort|uniq -u|xargs rm -rf';
 
-		return shipit.remote( cmd );
+		return shipit.remote( cmd, done );
 	}
 
 	startDeployment();
