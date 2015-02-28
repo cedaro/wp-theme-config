@@ -19,7 +19,7 @@ module.exports = {
 		replacements: [
 			{
 				from: /return '\d+\.\d+\.\d+/g,
-				to: "return '<%= package.version %>"
+				to: 'return \'<%= package.version %>'
 			}
 		]
 	}

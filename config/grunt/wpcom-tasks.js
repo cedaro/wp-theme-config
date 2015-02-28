@@ -68,7 +68,7 @@ module.exports = function( grunt, options ) {
 			files: {
 	            '': '<%= paths.wpcom %>/assets/fonts/Genericons.svg'
 			}
-        }
+        };
     }
 
     return theme;

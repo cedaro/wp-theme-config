@@ -22,8 +22,6 @@ module.exports = function ( shipit ) {
 		};
 	}
 
-	startDeployment();
-
 	function startDeployment() {
 		createDeploymentPath();
 	}
@@ -75,4 +73,6 @@ module.exports = function ( shipit ) {
 
 		return shipit.remote( cmd );
 	}
+
+	startDeployment();
 };

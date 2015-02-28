@@ -9,7 +9,6 @@
   "noarg": true,
   "quotmark": "single",
   "sub": true,
-  "strict": true,
   "undef": true,
   "unused": true,
 
