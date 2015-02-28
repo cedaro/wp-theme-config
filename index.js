@@ -1,5 +1,11 @@
 module.exports = function() {
+	var path = require( 'path' );
+
 	return {
+		loadShipitTask: function( task ) {
+			var taskPath = path.join( __dirname, 'config/shipit/' + task );
+			return require( taskPath );
+		},
 		paths: {
 			assets:  'assets',
 			config:  'config',
@@ -14,8 +20,9 @@ module.exports = function() {
 			tmp:     'tmp',
 			wpcom:   'wpcom',
 			global: {
-				config: require( 'path' ).join( __dirname, 'config' ),
-				grunt:  require( 'path' ).join( __dirname, 'config/grunt' )
+				config: path.join( __dirname, 'config' ),
+				grunt:  path.join( __dirname, 'config/grunt' ),
+				shipit: path.join( __dirname, 'config/shipit' ),
 			}
 		},
 		taskMap: {
