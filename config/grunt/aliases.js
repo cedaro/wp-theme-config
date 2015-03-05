@@ -24,10 +24,12 @@ module.exports = function( grunt, options ) {
 		],
 		'package': [
 			'check',
-			'replace',
+			'replace:functionsVersion',
+			'replace:styleVersion',
 			'build',
 			'clean:package',
 			'copy:package',
+			'replace:templateHeader',
 			'addtextdomain:package',
 			'makepot:build',
 			'compress:package',

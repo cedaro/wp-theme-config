@@ -25,7 +25,7 @@ module.exports = {
 	},
 	templateHeader: {
 		src: [
-			'<%= paths.source %>/style.css'
+			'<%= paths.tmp %>/style.css'
 		],
 		overwrite: true,
 		replacements: [
