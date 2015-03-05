@@ -22,5 +22,17 @@ module.exports = {
 				to: 'return \'<%= package.version %>'
 			}
 		]
+	},
+	templateHeader: {
+		src: [
+			'<%= paths.source %>/style.css'
+		],
+		overwrite: true,
+		replacements: [
+			{
+				from: /(Template: [^\/]+)\/src/g,
+				to: '$1'
+			}
+		]
 	}
 };
