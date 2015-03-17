@@ -31,7 +31,7 @@ module.exports = function( grunt, options ) {
 			'copy:package',
 			'replace:templateHeader',
 			'addtextdomain:package',
-			'makepot:build',
+			'makepot:package',
 			'compress:package',
 			'clean:package'
 		]

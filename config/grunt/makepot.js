@@ -1,7 +1,7 @@
 module.exports = {
-	build: {
+	package: {
 		options: {
-			cwd: '<%= paths.source %>',
+			cwd: '<%= paths.tmp %>',
 			exclude: [
 				'includes/back-compat\.php'
 			],
