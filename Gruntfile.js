@@ -1,9 +1,9 @@
 /*jshint node:true */
 
+var config = require( './index' )();
+
 module.exports = function( grunt ) {
 	'use strict';
-
-	var config = require( './index' )();
 
 	grunt.initConfig({
 
