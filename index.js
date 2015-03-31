@@ -22,7 +22,7 @@ module.exports = function() {
 			global: {
 				config: path.join( __dirname, 'config' ),
 				grunt:  path.join( __dirname, 'config/grunt' ),
-				shipit: path.join( __dirname, 'config/shipit' ),
+				shipit: path.join( __dirname, 'config/shipit' )
 			}
 		},
 		taskMap: {

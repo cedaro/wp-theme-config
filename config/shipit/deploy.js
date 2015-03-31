@@ -2,13 +2,13 @@ var moment = require( 'moment' ),
 	path = require( 'path' ),
 	scp = require( 'scp' );
 
-module.exports = function ( shipit, done ) {
+module.exports = function( shipit, done ) {
 	var package = require( path.join( process.cwd(), 'package.json' ) );
 
 	shipit.archiveFile = package.name + '-' + package.version + '.zip';
 	shipit.deployPath = shipit.config.deployRoot + package.name + '/releases/';
 
-	if ( process.platform === 'win32' ) {
+	if ( 'win32' === process.platform ) {
 		shipit.remoteCopy = function( src, dest, cb ) {
 			var options = {
 				file: src,
@@ -30,8 +30,8 @@ module.exports = function ( shipit, done ) {
 		return shipit.remote( 'mkdir -p ' + shipit.deployPath, copyProject );
 	}
 
+	// @todo Throw an error if the package doesn't exist
 	function copyProject() {
-		// @todo Throw an error if the package doesn't exist
 		return shipit.remoteCopy( 'dist/' + shipit.archiveFile, shipit.deployPath, unpackDeployment );
 	}
 
@@ -45,7 +45,7 @@ module.exports = function ( shipit, done ) {
 		cmd.push( 'mv ' + package.name + ' ' + shipit.deployTime );
 		cmd.push( 'rm ' + shipit.archiveFile );
 
-		return shipit.remote(cmd.join(' && '), updateSymlink);
+		return shipit.remote( cmd.join( ' && ' ), updateSymlink );
 	}
 
 	// @link http://blog.endpoint.com/2009/09/using-ln-sf-to-replace-symlink-to.html

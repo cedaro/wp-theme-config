@@ -9,7 +9,7 @@ module.exports = function( grunt, options ) {
             files: [
                 {
                     src: '<%= paths.wpcom %>/style.css',
-                    dest: '<%= paths.wpcom %>/style-rtl.css',
+                    dest: '<%= paths.wpcom %>/style-rtl.css'
                 }
             ]
         },

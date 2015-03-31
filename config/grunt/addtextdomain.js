@@ -4,7 +4,7 @@ module.exports = {
 	},
 	package: {
 		options: {
-			updateDomains: ['all']
+			updateDomains: [ 'all' ]
 		},
 		expand: true,
 		src: [

@@ -10,7 +10,7 @@ module.exports = {
 		exclude: [
 			'<%= paths.js %>/plugins.js',
 			'<%= paths.js %>/{,*/}*.min.js',
-			'<%= paths.js %>/vendor/*.js',
+			'<%= paths.js %>/vendor/*.js'
 		]
 	}
 };

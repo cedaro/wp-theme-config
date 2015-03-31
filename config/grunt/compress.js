@@ -6,6 +6,6 @@ module.exports = {
 		expand: true,
 		cwd: '<%= paths.tmp %>',
 		src: [ '**/*' ],
-		dest: '<%= package.name %>/',
+		dest: '<%= package.name %>/'
 	}
 };

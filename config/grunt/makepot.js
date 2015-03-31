@@ -13,7 +13,7 @@ module.exports = {
 			},
 			processPot: function( pot ) {
 				var translation,
-					excluded_meta = [
+					excludedMeta = [
 						'Theme Name of the plugin/theme',
 						'Theme URI of the plugin/theme',
 						'Author of the plugin/theme',
@@ -22,7 +22,7 @@ module.exports = {
 
 				for ( translation in pot.translations[''] ) {
 					if ( 'undefined' !== typeof pot.translations[''][ translation ].comments.extracted ) {
-						if ( excluded_meta.indexOf( pot.translations[''][ translation ].comments.extracted ) >= 0 ) {
+						if ( 0 <= excludedMeta.indexOf( pot.translations[''][ translation ].comments.extracted ) ) {
 							console.log( 'Excluded meta: ' + pot.translations[''][ translation ].comments.extracted );
 							delete pot.translations[''][ translation ];
 						}
