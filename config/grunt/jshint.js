@@ -10,7 +10,7 @@ module.exports = {
 	],
 	grunt: {
 		options: {
-			jshintrc: '<%= paths.global.config %>/.jshintrcnode'
+			jshintrc: '<%= paths.global.config %>/.jshintnoderc'
 		},
 		src: [ 'Gruntfile.js' ]
 	}

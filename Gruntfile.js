@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 
 		jshint: {
 			options: {
-				jshintrc: config.paths.global.config + '/.jshintrcnode'
+				jshintrc: config.paths.global.config + '/.jshintnoderc'
 			},
 			all: [
 				'index.js',
