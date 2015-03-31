@@ -20,6 +20,7 @@
     "grunt-contrib-less": "~1.0",
     "grunt-contrib-watch": "~0.6",
     "grunt-cssjanus": "~0.2",
+    "grunt-jscs": "~1.6",
     "grunt-lineending": "~0.2",
     "grunt-pixrem": "~0.1",
     "grunt-text-replace": "~0.4",
