@@ -1,38 +1,19 @@
 var moment = require( 'moment' ),
-	path = require( 'path' ),
-	scp = require( 'scp' );
+	path = require( 'path' );
 
-module.exports = function( shipit, done ) {
+module.exports = function( shipit ) {
 	var package = require( path.join( process.cwd(), 'package.json' ) );
 
 	shipit.archiveFile = package.name + '-' + package.version + '.zip';
 	shipit.deployPath = shipit.config.deployRoot + package.name + '/releases/';
 
-	if ( 'win32' === process.platform ) {
-		shipit.remoteCopy = function( src, dest, cb ) {
-			var options = {
-				file: src,
-				path: dest,
-				host: shipit.config.servers,
-				user: 'deploy'
-			};
-
-			shipit.log( 'Remote copy "%s" to "%s"', src, dest );
-			scp.send( options, cb );
-		};
-	}
-
-	function startDeployment() {
-		createDeploymentPath();
-	}
-
 	function createDeploymentPath() {
-		return shipit.remote( 'mkdir -p ' + shipit.deployPath, copyProject );
+		return shipit.remote( 'mkdir -p ' + shipit.deployPath );
 	}
 
 	// @todo Throw an error if the package doesn't exist
 	function copyProject() {
-		return shipit.remoteCopy( 'dist/' + shipit.archiveFile, shipit.deployPath, unpackDeployment );
+		return shipit.local( 'scp dist/' + shipit.archiveFile + ' ' + shipit.config.servers + ':' + shipit.deployPath );
 	}
 
 	function unpackDeployment() {
@@ -45,7 +26,7 @@ module.exports = function( shipit, done ) {
 		cmd.push( 'mv ' + package.name + ' ' + shipit.deployTime );
 		cmd.push( 'rm ' + shipit.archiveFile );
 
-		return shipit.remote( cmd.join( ' && ' ), updateSymlink );
+		return shipit.remote( cmd.join( ' && ' ) );
 	}
 
 	// @link http://blog.endpoint.com/2009/09/using-ln-sf-to-replace-symlink-to.html
@@ -56,7 +37,7 @@ module.exports = function( shipit, done ) {
 		cmd.push( 'ln -sn ' + shipit.deployPath + shipit.deployTime + ' ' + package.name + '-temp' );
 		cmd.push( 'mv -T ' + package.name + '-temp ' + package.name );
 
-		return shipit.remote( cmd.join( ' && ' ), cleanOldReleases );
+		return shipit.remote( cmd.join( ' && ' ) );
 	}
 
 	// @link https://github.com/shipitjs/shipit-deploy/blob/9f0a94876becd1043c504fa2866df59d68e3c434/tasks/deploy/clean.js#L24
@@ -71,8 +52,12 @@ module.exports = function( shipit, done ) {
 		cmd += ')';
 		cmd += '|sort|uniq -u|xargs rm -rf';
 
-		return shipit.remote( cmd, done );
+		return shipit.remote( cmd );
 	}
 
-	startDeployment();
+	return createDeploymentPath()
+		.then( copyProject )
+		.then( unpackDeployment )
+		.then( updateSymlink )
+		.then( cleanOldReleases );
 };

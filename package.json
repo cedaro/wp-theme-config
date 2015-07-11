@@ -30,7 +30,6 @@
     "grunt-wp-css": "0.2",
     "grunt-wp-i18n": "~0.5",
     "lodash": "~3.6",
-    "moment": "~2.9",
-    "scp": "~0.0"
+    "moment": "~2.9"
   }
 }
