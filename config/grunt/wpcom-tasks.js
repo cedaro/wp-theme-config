@@ -1,10 +1,5 @@
 module.exports = function( grunt, options ) {
     var theme = {
-        autoprefixer: {
-            src: [
-                '<%= paths.wpcom %>/style.css'
-            ]
-        },
         cssjanus: {
             files: [
                 {
@@ -29,6 +24,11 @@ module.exports = function( grunt, options ) {
                 }
             ]
         },
+        postcss: {
+            src: [
+                '<%= paths.wpcom %>/style.css'
+            ]
+        },
         wpcss: {
             files: [
                 {
@@ -40,7 +40,7 @@ module.exports = function( grunt, options ) {
     };
 
     if ( grunt.file.exists( options.paths.less + '/editor-style.less' ) ) {
-        theme.autoprefixer.src.push( '<%= paths.wpcom %>/assets/css/editor-style.css' );
+        theme.postcss.src.push( '<%= paths.wpcom %>/assets/css/editor-style.css' );
 
         theme.cssjanus.files.push({
             src: '<%= paths.wpcom %>/assets/css/editor-style.css',

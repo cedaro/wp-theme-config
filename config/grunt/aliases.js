@@ -6,7 +6,7 @@ module.exports = function( grunt, options ) {
 		'build:css:theme': [
 			'less:theme',
 			'pixrem:theme',
-			'autoprefixer:theme',
+			'postcss:theme',
 			'wpcss:theme',
 			'cssjanus:theme'
 		],
@@ -14,7 +14,7 @@ module.exports = function( grunt, options ) {
 		'build:css:wpcom': [
 			'less:wpcom',
 			'pixrem:wpcom',
-			'autoprefixer:wpcom',
+			'postcss:wpcom',
 			'wpcss:wpcom',
 			'cssjanus:wpcom'
 		],
@@ -41,7 +41,7 @@ module.exports = function( grunt, options ) {
 		tasks['build:css:plugins:easy-digital-downloads'] = [
 			'less:easy-digital-downloads',
 			'pixrem:easy-digital-downloads',
-			'autoprefixer:easy-digital-downloads',
+			'postcss:easy-digital-downloads',
 			'wpcss:easy-digital-downloads',
 			'cssjanus:easy-digital-downloads'
 		];
@@ -53,7 +53,7 @@ module.exports = function( grunt, options ) {
 		tasks['build:css:plugins:woocommerce'] = [
 			'less:woocommerce',
 			'pixrem:woocommerce',
-			'autoprefixer:woocommerce',
+			'postcss:woocommerce',
 			'wpcss:woocommerce',
 			'cssjanus:woocommerce'
 		];

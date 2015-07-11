@@ -4,9 +4,6 @@ module.exports = function( grunt, options ) {
 	}
 
 	return {
-		autoprefixer: {
-			src: [ '<%= paths.css %>/easy-digital-downloads.css' ]
-		},
 		cssjanus: {
 			src: '<%= paths.css %>/easy-digital-downloads.css',
 			dest: '<%= paths.css %>/easy-digital-downloads-rtl.css'
@@ -18,6 +15,9 @@ module.exports = function( grunt, options ) {
 		pixrem: {
 			src: '<%= paths.css %>/easy-digital-downloads.css',
 			dest: '<%= paths.css %>/easy-digital-downloads.css'
+		},
+		postcss: {
+			src: [ '<%= paths.css %>/easy-digital-downloads.css' ]
 		},
 		watch: {
 			files: [

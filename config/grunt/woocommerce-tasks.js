@@ -4,9 +4,6 @@ module.exports = function( grunt, options ) {
 	}
 
 	return {
-		autoprefixer: {
-			src: [ '<%= paths.css %>/woocommerce.css' ]
-		},
 		cssjanus: {
 			src: '<%= paths.css %>/woocommerce.css',
 			dest: '<%= paths.css %>/woocommerce-rtl.css'
@@ -18,6 +15,9 @@ module.exports = function( grunt, options ) {
 		pixrem: {
 			src: '<%= paths.css %>/woocommerce.css',
 			dest: '<%= paths.css %>/woocommerce.css'
+		},
+		postcss: {
+			src: [ '<%= paths.css %>/woocommerce.css' ]
 		},
 		watch: {
 			files: [
