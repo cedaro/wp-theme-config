@@ -2,10 +2,10 @@ var moment = require( 'moment' ),
 	path = require( 'path' );
 
 module.exports = function( shipit ) {
-	var package = require( path.join( process.cwd(), 'package.json' ) );
+	var project = require( path.join( process.cwd(), 'package.json' ) );
 
-	shipit.archiveFile = package.name + '-' + package.version + '.zip';
-	shipit.deployPath = shipit.config.deployRoot + package.name + '/releases/';
+	shipit.archiveFile = project.name + '-' + project.version + '.zip';
+	shipit.deployPath = shipit.config.deployRoot + project.name + '/releases/';
 
 	function createDeploymentPath() {
 		return shipit.remote( 'mkdir -p ' + shipit.deployPath );
@@ -23,7 +23,7 @@ module.exports = function( shipit ) {
 
 		cmd.push( 'cd ' + shipit.deployPath );
 		cmd.push( 'unzip -q ' + shipit.archiveFile );
-		cmd.push( 'mv ' + package.name + ' ' + shipit.deployTime );
+		cmd.push( 'mv ' + project.name + ' ' + shipit.deployTime );
 		cmd.push( 'rm ' + shipit.archiveFile );
 
 		return shipit.remote( cmd.join( ' && ' ) );
@@ -34,8 +34,8 @@ module.exports = function( shipit ) {
 		var cmd = [];
 
 		cmd.push( 'cd ' + shipit.config.publicPath );
-		cmd.push( 'ln -sn ' + shipit.deployPath + shipit.deployTime + ' ' + package.name + '-temp' );
-		cmd.push( 'mv -T ' + package.name + '-temp ' + package.name );
+		cmd.push( 'ln -sn ' + shipit.deployPath + shipit.deployTime + ' ' + project.name + '-temp' );
+		cmd.push( 'mv -T ' + project.name + '-temp ' + project.name );
 
 		return shipit.remote( cmd.join( ' && ' ) );
 	}
@@ -44,7 +44,7 @@ module.exports = function( shipit ) {
 	function cleanOldReleases() {
 		var cmd = '';
 
-		//cmd = 'rm -rf `ls -r | tail -n +6`';
+		// Alternative: cmd = 'rm -rf `ls -r | tail -n +6`';
 
 		cmd += '(';
 			cmd += 'ls -rd ' + shipit.deployPath + '*|head -n 5;';
