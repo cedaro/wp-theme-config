@@ -1,0 +1,13 @@
+{
+  "name": "sample",
+  "description": "Sample WordPress theme by Cedaro.",
+  "version": "1.0.0",
+  "license": "GPL-2.0+",
+  "author": "Cedaro",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "wp-theme-config": "git://github.com/cedaro/wp-theme-config.git#v0.5.0",
+    "grunt": "^0.4.5",
+    "load-project-config": "^0.2.0"
+  }
+}
