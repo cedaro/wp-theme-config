@@ -39,11 +39,13 @@ module.exports = function() {
 			'encore',
 			'huesos',
 			'hyalite',
+			'marquee',
 			'nowell',
 			'obsidian',
 			'promenade',
 			'shrake',
-			'soundcheck'
+			'soundcheck',
+			'twotone'
 		]
 	};
 };
