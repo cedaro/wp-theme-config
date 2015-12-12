@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Brady Vercher",
   "license": "MIT",
+  "private": true,
   "dependencies": {
     "autoprefixer": "^6.1",
     "aws-sdk": "^2.2.22",
