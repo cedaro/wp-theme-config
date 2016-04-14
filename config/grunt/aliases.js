@@ -11,7 +11,7 @@ module.exports = function( grunt, options ) {
 			'pixrem:theme',
 			'postcss:theme',
 			'wpcss:theme',
-			'cssjanus:theme'
+			'rtlcss:theme'
 		],
 		'build:css:plugins': [],
 		'build:css:wpcom': [
@@ -19,7 +19,7 @@ module.exports = function( grunt, options ) {
 			'pixrem:wpcom',
 			'postcss:wpcom',
 			'wpcss:wpcom',
-			'cssjanus:wpcom'
+			'rtlcss:wpcom'
 		],
 		'check': [
 			'search:themeSlugs',
@@ -50,7 +50,7 @@ module.exports = function( grunt, options ) {
 			'pixrem:plugin_' + plugin,
 			'postcss:plugin_' + plugin,
 			'wpcss:plugin_' + plugin,
-			'cssjanus:plugin_' + plugin
+			'rtlcss:plugin_' + plugin
 		];
 
 		tasks['build:css:plugins'].push( 'build:css:plugins:' + plugin );

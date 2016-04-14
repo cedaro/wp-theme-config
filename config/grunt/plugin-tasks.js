@@ -5,11 +5,6 @@ var _ = require( 'lodash' ),
 function generateConfig( plugin ) {
 	var config = {};
 
-	config['cssjanus__' +  plugin] = {
-		src: '<%= paths.css %>/' + plugin + '.css',
-		dest: '<%= paths.css %>/' + plugin + '-rtl.css'
-	};
-
 	config['less__' +  plugin] = {
 		src: '<%= paths.less %>/plugins/' + plugin + '.less',
 		dest: '<%= paths.css %>/' + plugin + '.css'
@@ -23,6 +18,11 @@ function generateConfig( plugin ) {
 
 	config['postcss__' +  plugin] = {
 		src: [ '<%= paths.css %>/' + plugin + '.css' ]
+	};
+
+	config['rtlcss__' +  plugin] = {
+		src: '<%= paths.css %>/' + plugin + '.css',
+		dest: '<%= paths.css %>/' + plugin + '-rtl.css'
 	};
 
 	config['watch__' +  plugin] = {

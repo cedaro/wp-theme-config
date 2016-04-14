@@ -1,13 +1,5 @@
 module.exports = function( grunt, options ) {
 	var theme = {
-		cssjanus: {
-			files: [
-				{
-					src: '<%= paths.source %>/style.css',
-					dest: '<%= paths.source %>/style-rtl.css'
-				}
-			]
-		},
 		less: {
 			files: [
 				{
@@ -29,6 +21,14 @@ module.exports = function( grunt, options ) {
 				'<%= paths.source %>/style.css'
 			]
 		},
+		rtlcss: {
+			files: [
+				{
+					src: '<%= paths.source %>/style.css',
+					dest: '<%= paths.source %>/style-rtl.css'
+				}
+			]
+		},
 		wpcss: {
 			files: [
 				{
@@ -42,11 +42,6 @@ module.exports = function( grunt, options ) {
 	if ( grunt.file.exists( options.paths.less + '/editor-style.less' ) ) {
 		theme.postcss.src.push( '<%= paths.css %>/editor-style.css' );
 
-		theme.cssjanus.files.push({
-			src: '<%= paths.css %>/editor-style.css',
-			dest: '<%= paths.css %>/editor-style-rtl.css'
-		});
-
 		theme.less.files.push({
 			src: '<%= paths.less %>/editor-style.less',
 			dest: '<%= paths.css %>/editor-style.css'
@@ -55,6 +50,11 @@ module.exports = function( grunt, options ) {
 		theme.pixrem.files.push({
 			src: '<%= paths.css %>/editor-style.css',
 			dest: '<%= paths.css %>/editor-style.css'
+		});
+
+		theme.rtlcss.files.push({
+			src: '<%= paths.css %>/editor-style.css',
+			dest: '<%= paths.css %>/editor-style-rtl.css'
 		});
 
 		theme.wpcss.files.push({
