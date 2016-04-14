@@ -37,6 +37,8 @@ module.exports = function() {
 			'caldwell',
 			'debut',
 			'encore',
+			'hammer',
+			'hondo',
 			'huesos',
 			'hyalite',
 			'marquee',
