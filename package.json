@@ -9,6 +9,7 @@
   "dependencies": {
     "autoprefixer": "^6.1",
     "aws-sdk": "^2.2.22",
+    "glob": "^7.0.3",
     "grunt": "~0.4",
     "grunt-complexity": "~0.3",
     "grunt-contrib-clean": "^0.7",

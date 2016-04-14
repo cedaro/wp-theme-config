@@ -1,3 +1,6 @@
+var glob = require( 'glob' ),
+	path = require( 'path' );
+
 module.exports = function( grunt, options ) {
 	var tasks = {
 		'build:css': [
@@ -37,29 +40,21 @@ module.exports = function( grunt, options ) {
 		]
 	};
 
-	if ( grunt.file.exists( options.paths.less + '/plugins/easy-digital-downloads.less' ) ) {
-		tasks['build:css:plugins:easy-digital-downloads'] = [
-			'less:easy-digital-downloads',
-			'pixrem:easy-digital-downloads',
-			'postcss:easy-digital-downloads',
-			'wpcss:easy-digital-downloads',
-			'cssjanus:easy-digital-downloads'
+	glob.sync( '*.less', {
+		cwd: options.paths.less + '/plugins'
+	}).forEach(function( file ) {
+		var plugin = path.basename( file, '.less' );
+
+		tasks['build:css:plugins:' + plugin ] = [
+			'less:plugin_' + plugin,
+			'pixrem:plugin_' + plugin,
+			'postcss:plugin_' + plugin,
+			'wpcss:plugin_' + plugin,
+			'cssjanus:plugin_' + plugin
 		];
 
-		tasks['build:css:plugins'].push( 'build:css:plugins:easy-digital-downloads' );
-	}
-
-	if ( grunt.file.exists( options.paths.less + '/plugins/woocommerce.less' ) ) {
-		tasks['build:css:plugins:woocommerce'] = [
-			'less:woocommerce',
-			'pixrem:woocommerce',
-			'postcss:woocommerce',
-			'wpcss:woocommerce',
-			'cssjanus:woocommerce'
-		];
-
-		tasks['build:css:plugins'].push( 'build:css:plugins:woocommerce' );
-	}
+		tasks['build:css:plugins'].push( 'build:css:plugins:' + plugin );
+	});
 
 	return tasks;
 };
