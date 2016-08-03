@@ -31,7 +31,7 @@ function generateConfig( plugin ) {
 			'<%= paths.less %>/plugins/' + plugin + '/*.less',
 			'<%= paths.less %>/plugins/' + plugin + '/**/*.less'
 		],
-		tasks: [ 'less:' + plugin ]
+		tasks: [ 'less:plugin_' + plugin ]
 	};
 
 	config['wpcss__' +  plugin] = {
