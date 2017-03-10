@@ -41,13 +41,18 @@ module.exports = function() {
 			'hondo',
 			'huesos',
 			'hyalite',
+			'lifework',
 			'marquee',
+			'merchato',
 			'nowell',
 			'obsidian',
+			'ovation',
 			'promenade',
+			'reprise',
 			'shrake',
 			'soundcheck',
-			'twotone'
+			'twotone',
+			'wayfarer'
 		]
 	};
 };
