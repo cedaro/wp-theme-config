@@ -6,6 +6,7 @@ module.exports = {
 		src: [
 			'<%= paths.wpcom %>/*',
 			'!<%= paths.wpcom %>/.svn',
+			'!<%= paths.wpcom %>/inc',
 			'!<%= paths.wpcom %>/includes',
 			'<%= paths.wpcom %>/includes/*',
 			'!<%= paths.wpcom %>/includes/wpcom',
