@@ -9,7 +9,9 @@ module.exports = {
 			'!<%= paths.wpcom %>/inc',
 			'!<%= paths.wpcom %>/includes',
 			'<%= paths.wpcom %>/includes/*',
-			'!<%= paths.wpcom %>/includes/wpcom',
+			'!<%= paths.wpcom %>/includes/plugins',
+			'<%= paths.wpcom %>/includes/plugins/*',
+			'!<%= paths.wpcom %>/includes/plugins/jetpack-pro',
 			'!<%= paths.wpcom %>/languages'
 		]
 	}
