@@ -19,7 +19,8 @@ module.exports = {
 		expand: true,
 		src: [
 			'<%= paths.wpcom %>/*.php',
-			'<%= paths.wpcom %>/**/*.php'
+			'<%= paths.wpcom %>/**/*.php',
+			'!<%= paths.wpcom %>/inc/*.php'
 		]
 	}
 };
