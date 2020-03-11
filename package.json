@@ -1,6 +1,6 @@
 {
   "name": "wp-theme-config",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Cedaro's default Grunt configuration for building WordPress themes.",
   "main": "index.js",
   "author": "Brady Vercher",
