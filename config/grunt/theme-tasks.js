@@ -39,29 +39,34 @@ module.exports = function( grunt, options ) {
 		}
 	};
 
-	if ( grunt.file.exists( options.paths.less + '/editor-style.less' ) ) {
-		theme.postcss.src.push( '<%= paths.css %>/editor-style.css' );
+	[
+		'block-editor',
+		'editor-style',
+	].forEach( function( filename ) {
+		if ( grunt.file.exists( options.paths.less + '/' + filename + '.less' ) ) {
+			theme.postcss.src.push( '<%= paths.css %>/' + filename + '.css' );
 
-		theme.less.files.push({
-			src: '<%= paths.less %>/editor-style.less',
-			dest: '<%= paths.css %>/editor-style.css'
-		});
+			theme.less.files.push({
+				src: '<%= paths.less %>/' + filename + '.less',
+				dest: '<%= paths.css %>/' + filename + '.css'
+			});
 
-		theme.pixrem.files.push({
-			src: '<%= paths.css %>/editor-style.css',
-			dest: '<%= paths.css %>/editor-style.css'
-		});
+			theme.pixrem.files.push({
+				src: '<%= paths.css %>/' + filename + '.css',
+				dest: '<%= paths.css %>/' + filename + '.css'
+			});
 
-		theme.rtlcss.files.push({
-			src: '<%= paths.css %>/editor-style.css',
-			dest: '<%= paths.css %>/editor-style-rtl.css'
-		});
+			theme.rtlcss.files.push({
+				src: '<%= paths.css %>/' + filename + '.css',
+				dest: '<%= paths.css %>/' + filename + '-rtl.css'
+			});
 
-		theme.wpcss.files.push({
-			src: '<%= paths.css %>/editor-style.css',
-			dest: '<%= paths.css %>/editor-style.css'
-		});
-	}
+			theme.wpcss.files.push({
+				src: '<%= paths.css %>/' + filename + '.css',
+				dest: '<%= paths.css %>/' + filename + '.css'
+			});
+		}
+	} );
 
 	return theme;
 };
