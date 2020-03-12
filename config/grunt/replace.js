@@ -1,7 +1,7 @@
 module.exports = {
 	styleVersion: {
 		src: [
-			'<%= paths.less %>/*(style|wpcom).less'
+			'<%= paths.less %>/*(style|style-wpcom|wpcom).less'
 		],
 		overwrite: true,
 		replacements: [

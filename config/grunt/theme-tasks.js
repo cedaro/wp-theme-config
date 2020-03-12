@@ -42,6 +42,8 @@ module.exports = function( grunt, options ) {
 	[
 		'block-editor',
 		'editor-style',
+		'editor-style-block',
+		'editor-style-classic'
 	].forEach( function( filename ) {
 		if ( grunt.file.exists( options.paths.less + '/' + filename + '.less' ) ) {
 			theme.postcss.src.push( '<%= paths.css %>/' + filename + '.css' );

@@ -5,6 +5,10 @@ module.exports = function( grunt, options ) {
 				{
 					src: '<%= paths.less %>/wpcom.less',
 					dest: '<%= paths.wpcom %>/style.css'
+				},
+				{
+					src: '<%= paths.less %>/style-wpcom.less',
+					dest: '<%= paths.wpcom %>/style.css'
 				}
 			]
 		},
@@ -39,29 +43,36 @@ module.exports = function( grunt, options ) {
 		}
 	};
 
-	if ( grunt.file.exists( options.paths.less + '/editor-style.less' ) ) {
-		theme.postcss.src.push( '<%= paths.wpcom %>/assets/css/editor-style.css' );
+	[
+		'block-editor',
+		'editor-style',
+		'editor-style-block',
+		'editor-style-classic'
+	].forEach( function( filename ) {
+		if ( grunt.file.exists( options.paths.less + '/' + filename + '.less' ) ) {
+			theme.postcss.src.push( '<%= paths.wpcom %>/assets/css/' + filename + '.css' );
 
-		theme.less.files.push({
-			src: '<%= paths.less %>/editor-style.less',
-			dest: '<%= paths.wpcom %>/assets/css/editor-style.css'
-		});
+			theme.less.files.push({
+				src: '<%= paths.less %>/' + filename + '.less',
+				dest: '<%= paths.wpcom %>/assets/css/' + filename + '.css'
+			});
 
-		theme.pixrem.files.push({
-			src: '<%= paths.wpcom %>/assets/css/editor-style.css',
-			dest: '<%= paths.wpcom %>/assets/css/editor-style.css'
-		});
+			theme.pixrem.files.push({
+				src: '<%= paths.wpcom %>/assets/css/' + filename + '.css',
+				dest: '<%= paths.wpcom %>/assets/css/' + filename + '.css'
+			});
 
-		theme.rtlcss.files.push({
-			src: '<%= paths.wpcom %>/assets/css/editor-style.css',
-			dest: '<%= paths.wpcom %>/assets/css/editor-style-rtl.css'
-		});
+			theme.rtlcss.files.push({
+				src: '<%= paths.wpcom %>/assets/css/' + filename + '.css',
+				dest: '<%= paths.wpcom %>/assets/css/' + filename + '-rtl.css'
+			});
 
-		theme.wpcss.files.push({
-			src: '<%= paths.wpcom %>/assets/css/editor-style.css',
-			dest: '<%= paths.wpcom %>/assets/css/editor-style.css'
-		});
-	}
+			theme.wpcss.files.push({
+				src: '<%= paths.wpcom %>/assets/css/' + filename + '.css',
+				dest: '<%= paths.wpcom %>/assets/css/' + filename + '.css'
+			});
+		}
+	} );
 
 	if ( grunt.file.exists( options.paths.source + '/assets/fonts/Genericons.svg' ) ) {
 		theme.lineending = {
