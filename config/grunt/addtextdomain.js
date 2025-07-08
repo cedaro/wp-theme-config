@@ -11,16 +11,5 @@ module.exports = {
 			'<%= paths.tmp %>/*.php',
 			'<%= paths.tmp %>/**/*.php'
 		]
-	},
-	wpcom: {
-		options: {
-			updateDomains: [ 'all' ]
-		},
-		expand: true,
-		src: [
-			'<%= paths.wpcom %>/*.php',
-			'<%= paths.wpcom %>/**/*.php',
-			'!<%= paths.wpcom %>/inc/*.php'
-		]
 	}
 };

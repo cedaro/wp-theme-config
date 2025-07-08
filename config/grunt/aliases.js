@@ -13,12 +13,6 @@ module.exports = function( grunt, options ) {
 			'rtlcss:theme'
 		],
 		'build:css:plugins': [],
-		'build:css:wpcom': [
-			'less:wpcom',
-			'postcss:wpcom',
-			'wpcss:wpcom',
-			'rtlcss:wpcom'
-		],
 		'check': [
 			'search:themeSlugs',
 			'complexity:theme'
