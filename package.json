@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "@wordpress/browserslist-config": "^6.26.0",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^9.8.8",
     "aws-sdk": "^2.1692.0",
     "glob": "^11.0.3",
     "grunt": "^1.6.1",
@@ -18,7 +18,7 @@
     "grunt-contrib-concat": "^2.1",
     "grunt-contrib-copy": "^1.0",
     "grunt-contrib-jshint": "^3.2",
-    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-less": "^2.1.0",
     "grunt-contrib-uglify": "^5.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-jscs": "^3.0.1",
