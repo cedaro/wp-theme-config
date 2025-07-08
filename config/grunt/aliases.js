@@ -8,7 +8,6 @@ module.exports = function( grunt, options ) {
 		],
 		'build:css:theme': [
 			'less:theme',
-			'pixrem:theme',
 			'postcss:theme',
 			'wpcss:theme',
 			'rtlcss:theme'
@@ -16,7 +15,6 @@ module.exports = function( grunt, options ) {
 		'build:css:plugins': [],
 		'build:css:wpcom': [
 			'less:wpcom',
-			'pixrem:wpcom',
 			'postcss:wpcom',
 			'wpcss:wpcom',
 			'rtlcss:wpcom'
@@ -47,7 +45,6 @@ module.exports = function( grunt, options ) {
 
 		tasks['build:css:plugins:' + plugin ] = [
 			'less:plugin_' + plugin,
-			'pixrem:plugin_' + plugin,
 			'postcss:plugin_' + plugin,
 			'wpcss:plugin_' + plugin,
 			'rtlcss:plugin_' + plugin

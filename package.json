@@ -23,7 +23,6 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-jscs": "^3.0.1",
     "grunt-lineending": "^1.0",
-    "grunt-pixrem": "^0.1",
     "grunt-postcss": "^0.9",
     "grunt-rtlcss": "^2.0.2",
     "grunt-search": "^0.1",

@@ -12,14 +12,6 @@ module.exports = function( grunt, options ) {
 				}
 			]
 		},
-		pixrem: {
-			files: [
-				{
-					src: '<%= paths.wpcom %>/style.css',
-					dest: '<%= paths.wpcom %>/style.css'
-				}
-			]
-		},
 		postcss: {
 			src: [
 				'<%= paths.wpcom %>/style.css'

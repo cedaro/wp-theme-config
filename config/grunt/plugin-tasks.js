@@ -10,12 +10,6 @@ function generateConfig( plugin ) {
 		dest: '<%= paths.css %>/' + plugin + '.css'
 	};
 
-
-	config['pixrem__' +  plugin] = {
-		src: '<%= paths.css %>/' + plugin + '.css',
-		dest: '<%= paths.css %>/' + plugin + '.css'
-	};
-
 	config['postcss__' +  plugin] = {
 		src: [ '<%= paths.css %>/' + plugin + '.css' ]
 	};

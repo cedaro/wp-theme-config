@@ -8,14 +8,6 @@ module.exports = function( grunt, options ) {
 				}
 			]
 		},
-		pixrem: {
-			files: [
-				{
-					src: '<%= paths.source %>/style.css',
-					dest: '<%= paths.source %>/style.css'
-				}
-			]
-		},
 		postcss: {
 			src: [
 				'<%= paths.source %>/style.css'
@@ -50,11 +42,6 @@ module.exports = function( grunt, options ) {
 
 			theme.less.files.push({
 				src: '<%= paths.less %>/' + filename + '.less',
-				dest: '<%= paths.css %>/' + filename + '.css'
-			});
-
-			theme.pixrem.files.push({
-				src: '<%= paths.css %>/' + filename + '.css',
 				dest: '<%= paths.css %>/' + filename + '.css'
 			});
 
