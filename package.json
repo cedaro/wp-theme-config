@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.842.0",
     "@wordpress/browserslist-config": "^6.26.0",
     "autoprefixer": "^9.8.8",
-    "aws-sdk": "^2.1692.0",
     "glob": "^11.0.3",
     "grunt": "^1.6.1",
     "grunt-complexity": "^1.1.0",
