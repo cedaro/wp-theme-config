@@ -1,8 +1,8 @@
-var moment = require( 'moment' ),
-	path = require( 'path' );
+const moment = require( 'moment' );
+const path = require( 'path' );
 
 module.exports = function( shipit ) {
-	var project = require( path.join( process.cwd(), 'package.json' ) );
+	const project = require( path.join( process.cwd(), 'package.json' ) );
 
 	shipit.archiveFile = project.name + '-' + project.version + '.zip';
 	shipit.deployPath = shipit.config.deployRoot + project.name + '/releases/';
@@ -17,7 +17,7 @@ module.exports = function( shipit ) {
 	}
 
 	function unpackDeployment() {
-		var cmd = [];
+		const cmd = [];
 
 		shipit.deployTime = moment().utc().format( 'YYYYMMDDHHmmss' );
 
@@ -31,7 +31,7 @@ module.exports = function( shipit ) {
 
 	// @link http://blog.endpoint.com/2009/09/using-ln-sf-to-replace-symlink-to.html
 	function updateSymlink() {
-		var cmd = [];
+		const cmd = [];
 
 		cmd.push( 'cd ' + shipit.config.publicPath );
 		cmd.push( 'ln -sn ' + shipit.deployPath + shipit.deployTime + ' ' + project.name + '-temp' );
@@ -42,7 +42,7 @@ module.exports = function( shipit ) {
 
 	// @link https://github.com/shipitjs/shipit-deploy/blob/9f0a94876becd1043c504fa2866df59d68e3c434/tasks/deploy/clean.js#L24
 	function cleanOldReleases() {
-		var cmd = '';
+		let cmd = '';
 
 		// Alternative: cmd = 'rm -rf `ls -r | tail -n +6`';
 
